@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import MapboxGL from '@rnmapbox/maps'
+import { MAP_DEFAULT_CENTER, MAPBOX_STYLE } from '../../lib/constants'
 import * as Location from 'expo-location'
 
 export default function MapView() {
@@ -41,10 +42,10 @@ export default function MapView() {
       {mapReady && (
         <MapboxGL.MapView
           style={styles.map}
-          styleURL={MapboxGL.StyleURL.Street}
+          styleURL={MAPBOX_STYLE}
           onDidFinishLoadingMap={() => setMapLoaded(true)}
         >
-          <MapboxGL.Camera ref={cameraRef} />
+          <MapboxGL.Camera ref={cameraRef} centerCoordinate={MAP_DEFAULT_CENTER} />
           {hasPermission && mapLoaded && <MapboxGL.UserLocation visible />}
         </MapboxGL.MapView>
       )}

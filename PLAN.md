@@ -42,21 +42,21 @@ routing. goPEV is built ground-up for these constraints.
 
 ## Iterative development milestones
 
-### Milestone 1 — Map shell + location
-**Goal:** working map centered on user location, both web and mobile.
+### |COMPLETED| Milestone 1 — Map shell + location
+**Goal:** |COMPLETED| working map centered on user location, both web and mobile.
 Nothing else is buildable without this.
 
 Web tasks:
 - |COMPLETED| Next.js scaffolded, Vercel connected, deploys on push
-- |COMPLETED|Mapbox GL JS full-screen map renders (dynamic import, no SSR)
-- |COMPLETED|User location dot on map, map re-centers on load
+- |COMPLETED| Mapbox GL JS full-screen map renders (dynamic import, no SSR)
+- |COMPLETED| User location dot on map, map re-centers on load
 
 Mobile tasks:
-- Expo app scaffolded
-- @rnmapbox/maps renders on Android physical device
-- User location working via expo-location
+- |COMPLETED| Expo app scaffolded
+- |COMPLETED| @rnmapbox/maps renders on Android physical device
+- |COMPLETED| User location working via expo-location
 
-Deliverable: open app, see map centered on your location. Web and mobile.
+|COMPLETED| Deliverable: open app, see map centered on your location. Web and mobile.
 
 ---
 

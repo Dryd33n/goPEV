@@ -1,7 +1,9 @@
 'use client'
 import mapboxgl from 'mapbox-gl'
+import { MAP_DEFAULT_CENTER, MAP_DEFAULT_PITCH, MAP_DEFAULT_ZOOM, MAPBOX_STYLE } from '../../lib/mapbox/constants'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { useEffect, useRef } from 'react'
+import NavigationModal from './NavigationModal'
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
@@ -14,8 +16,8 @@ export default function MapView() {
 
     const map = new mapboxgl.Map({
       container: containerRef.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [-123.3656, 48.4284], // Victoria BC — overridden on location grant
+      style: MAPBOX_STYLE,
+      center: MAP_DEFAULT_CENTER,
       zoom: 13,
     })
 
@@ -40,5 +42,10 @@ export default function MapView() {
     }
   }, [])
 
-  return <div ref={containerRef} className="h-full w-full" />
+  return (
+    <div className="relative h-full w-full">
+      <div ref={containerRef} className="h-full w-full" />
+      <NavigationModal />
+    </div>
+  )
 }
