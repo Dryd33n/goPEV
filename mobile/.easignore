@@ -1,0 +1,24 @@
+# EAS Build ignore file
+# EAS respects .gitignore by default — this file adds EAS-specific exclusions
+
+# Local env (never upload secrets to EAS servers)
+.env.local
+.env*.local
+
+# Dev tooling — not needed for cloud builds
+.idea/
+.vscode/
+*.log
+
+# macOS
+.DS_Store
+
+# Test files
+__tests__/
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# Docs
+*.md
